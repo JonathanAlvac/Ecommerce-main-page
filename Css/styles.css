@@ -36,6 +36,13 @@ body {
   margin: 0 auto;
 }
 
+@media (min-width: 1921px) {
+  .contenedor {
+    max-width: 160rem;
+  }
+
+}
+
 h1,
 h2,
 h3 {
@@ -63,16 +70,19 @@ img {
 }
 
 /*utilidades*/
-.tex-center {
+.text-center {
   text-align: center;
 }
 
 /*Degradados*/
 
 .degradado-verde {
+
+  background: linear-gradient(to right, var(--Primario) 0%, var(--Secundario) 100%);
+  -webkit-background-clip: text;
+  /*revisar, text no soportado*/
+  background-clip: text;
   color: transparent;
-  background: linear-gradient(to right, var(--Primario) 0%, var(--Secundario)100%);
-  background-clip: padding-box;
 }
 
 /*Header*/
@@ -130,4 +140,57 @@ img {
 .precio-producto span {
   font-size: 8rem;
   font-weight: 900;
+}
+
+/*iconos*/
+.icono {
+  margin: calc(var(--separacion)/2)0;
+  margin-bottom: 5rem;
+  border-bottom: .02rem solid #3b3b3b;
+}
+
+.icono:last-of-type{
+  border-bottom: unset;
+  margin-bottom: 6rem;
+}
+
+.icono img {
+  margin: 0 auto;
+  width: 15%;
+  height: 15%;
+}
+
+.icono h3 {
+  color: var(--Primario);
+  text-transform: uppercase;
+  padding: 2rem 0;
+}
+
+@media (min-width: 768px) {
+  .icono {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+    border-bottom: unset;
+    padding: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .icono-contenedor {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 4rem;
+    align-items: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .sobre-nosotros {
+    grid-template-columns: repeat(2, 1fr);
+    background: linear-gradient(to right, var(--primario)0%, var(--blanco)100%, ), url(img/imagen-mujer.jpg);
+
+  }
 }
